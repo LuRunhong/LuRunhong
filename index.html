@@ -339,7 +339,7 @@
                 
               
 
-              <time title="Created: 2019-01-26 11:41:12 / Modified: 11:45:43" itemprop="dateCreated datePublished" datetime="2019-01-26T11:41:12-05:00">2019-01-26</time>
+              <time title="Created: 2019-01-26 11:41:12 / Modified: 11:53:50" itemprop="dateCreated datePublished" datetime="2019-01-26T11:41:12-05:00">2019-01-26</time>
             
 
             
@@ -389,8 +389,10 @@
 <ol>
 <li>在pom.xml中添加jpa 组件</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt; </span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">2. 添加mysql组件</span><br></pre></td></tr></table></figure>
-<p><dependency><br>    <groupid>mysql</groupid><br>        artifactId&gt;mysql-connector-java<br></dependency><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. 在application.yum中添加如下配置：</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"> </span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">2. 添加mysql组件</span><br></pre></td></tr></table></figure>
+<dependency><br>    <groupid>mysql</groupid><br>        artifactId&gt;mysql-connector-java<br></dependency>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. 在application.yum中添加如下配置：</span><br></pre></td></tr></table></figure>
 <p>spring:<br>  datasource:<br>    driver-class-name: com.mysql.jdbc.Driver<br>    url: jdbc:mysql://127.0.0.1:3306/***(对应库)<br>    data-username: root<br>    data-password: root<br>  jpa:<br>    hibernate:<br>      ddl-auto: update  #自动更新 不删之前数据</p>
 <pre><code>  #ddl-auto: create  #每次运行自动创建空表，即使有数据也会先删掉
 show-sql: true 
