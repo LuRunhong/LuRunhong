@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lurunhong.com/2019/01/23/Spring-data-JPA一/">
+    <link itemprop="mainEntityOfPage" href="http://lurunhong.com/2019/01/26/Spring-data-JPA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Run.Lew">
@@ -312,8 +312,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/23/Spring-data-JPA一/" itemprop="url">
-                  Spring-data-JPA一
+                <a class="post-title-link" href="/2019/01/26/Spring-data-JPA/" itemprop="url">
+                  Spring-data-JPA
                 </a>
               
             
@@ -339,7 +339,7 @@
                 
               
 
-              <time title="Created: 2019-01-23 11:18:42 / Modified: 11:20:53" itemprop="dateCreated datePublished" datetime="2019-01-23T11:18:42-05:00">2019-01-23</time>
+              <time title="Created: 2019-01-26 11:41:12 / Modified: 11:45:43" itemprop="dateCreated datePublished" datetime="2019-01-26T11:41:12-05:00">2019-01-26</time>
             
 
             
@@ -383,13 +383,22 @@
 <li>JPA (java persistence api)：对象持久化标准；</li>
 <li>Spring-data-JPA 可以理解为spring对hibernate的整合;</li>
 </ul>
-<p>在pom.xml中添加  spring-boot-starter-data-jpa 组件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt; </span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">添加mysql组件</span><br></pre></td></tr></table></figure>
-<p><dependency><br>    <groupid>mysql</groupid><br>        artifactId&gt;mysql-connector-java<br></dependency><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">对spring-data-jpa和mysql做响应配置</span><br><span class="line">在application.yum中添加如下配置：</span><br></pre></td></tr></table></figure></p>
+<h4 id="在springboot中-使用JPA反向生成数据库表"><a href="#在springboot中-使用JPA反向生成数据库表" class="headerlink" title="在springboot中 使用JPA反向生成数据库表"></a>在springboot中 使用JPA反向生成数据库表</h4><blockquote>
+<p><em>对spring-data-jpa和mysql做相应的配置</em></p>
+</blockquote>
+<ol>
+<li>在pom.xml中添加jpa 组件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt; </span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">2. 添加mysql组件</span><br></pre></td></tr></table></figure>
+<p><dependency><br>    <groupid>mysql</groupid><br>        artifactId&gt;mysql-connector-java<br></dependency><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. 在application.yum中添加如下配置：</span><br></pre></td></tr></table></figure></p>
 <p>spring:<br>  datasource:<br>    driver-class-name: com.mysql.jdbc.Driver<br>    url: jdbc:mysql://127.0.0.1:3306/***(对应库)<br>    data-username: root<br>    data-password: root<br>  jpa:<br>    hibernate:<br>      ddl-auto: update  #自动更新 不删之前数据</p>
 <pre><code>  #ddl-auto: create  #每次运行自动创建空表，即使有数据也会先删掉
 show-sql: true 
-</code></pre><p><code>`</code><br>使用这种jpa的方式，可以无需提前建表，只需建好实体类（与数据库对应），需使用@Entity注解；</p>
+</code></pre><p><code>`</code></p>
+<ol start="4">
+<li>在实体类中使用@Entity注解；</li>
+</ol>
+<p><strong>使用以上这种spring-data-jpa的方式，可以无需提前建表，只需建好实体类（与数据库对应），就可以实现springboot反向生成数据库。</strong></p>
 
           
         
